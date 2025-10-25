@@ -1,9 +1,6 @@
-console.log('Hola');
-
 let prompt = require('prompt-sync')();
 
 let num1 = prompt('Introduzca numero:');
-
 
 // prompt siempre devuelve un string
 // console.log(typeof num1);
@@ -38,4 +35,3 @@ if (formatoOk) {
     
     console.log('suma = ' + suma + ', resta = ' + resta);
 }
-
