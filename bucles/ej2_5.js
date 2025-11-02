@@ -5,21 +5,47 @@
 
 const prompt = require('prompt-sync')();
 
+let acumulador = 0;
+
 let contador = 0; 
+
+let n;
+
+do {
+    n = Number(prompt('Introduzca un número (-1 para salir): '));
+    if (n !== -1) {
+        acumulador += n;
+        contador++;    
+    }
+} while (n !== -1)
+
+if (contador > 0) {
+    let media = acumulador / contador;
+    console.log(`La media aritmética es: ${(media).toFixed(2)}`);
+} else {
+    console.log("No se introdujeron números válidos.");
+}
+
+/*
+------- OPCION WHILE -------
+const prompt = require('prompt-sync')();
 
 let acumulador = 0;
 
-let n = prompt('Introduzca un número (-1 para salir): ');
+let contador = 0; 
+
+let n = Number(prompt('Introduzca un número (-1 para salir): '));
 
 while (n !== -1) {
-    n = prompt('Introduzca otro número (-1 para salir): ');
     acumulador += n;
     contador++;    
+    n = Number(prompt('Introduzca otro número (-1 para salir): '));
 }
 
 if (contador > 0) {
     let media = acumulador / contador;
-    console.log(`La media aritmética es: ${media}`);
+    console.log(`La media aritmética es: ${(media).toFixed(2)}`);
 } else {
     console.log("No se introdujeron números válidos.");
 }
+*/
