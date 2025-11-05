@@ -12,7 +12,7 @@ for (let i = 1; i <= 3; i++) {
     
     if (clave === claveCorrecta) {
         acierto = true;
-        break;
+        break; // no son buena practica, mejor controlar con variables
     } else {
         console.log("Clave incorrecta.");
     }
@@ -23,6 +23,25 @@ if (acierto) {
 } else {
     console.log("Has agotado los 3 intentos.");
 }
+
+/*
+otra manera:
+const prompt = ...
+
+cont clave = "eureka";
+let intentos = 3;
+
+do {
+    let inpClave = prompt('Introduzca clave: '); 
+    if (clave === inpClave) {
+        console.log("Has encontrado la contraseña");
+        intentos = 0;
+    } else {
+        console.log(`Contraseña incorrecta, intentos: ${--intentos}`); // antes de hacer la linea predecrementas el numero
+        }
+    }
+} while (intentos > 0);
+*/
 
 /* 
 ---- ejemplo de funcion del profe ----

@@ -31,3 +31,30 @@ if (numero === 0) {
     console.log(`La mínimo es: ${(minimo)}`);
     console.log(`La media es: ${(media).toFixed(2)}`);
 }
+
+// otra forma de resolverlo:
+/*
+const prompt = require('prompt-sync')();
+
+let max = -Infinity;
+let min = Infinity; // el infinito positivo
+let count = 0;
+let acc = 0;
+let n;
+
+do {
+    n = Number(prompt("Introduce n: "));
+    if(n !== 0) {
+        if(n>max) {
+            max = n;
+        }
+        if (n<min) {
+            min = n;
+        }
+        acc += n;
+        count++;
+    }
+} while (n != 0);
+
+console.log(`El máximo es: ${max}, el mínimo: ${min} y la media: ${acc/count}`);
+*/
