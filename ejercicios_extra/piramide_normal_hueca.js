@@ -25,51 +25,26 @@ while(contador < altura) {
     contador++;
 }
 
-// MEDIA PIRAMIDE HUECA:
+// otra forma:
+// Pirámide hueca simétrica con process.stdout.write()
 
-// *
-// **
-// * *
-// *  *
-// *****
+// const n = 5; // altura
 
-// const prompt = require('prompt-sync')();
+// for (let i = 1; i <= n; i++) {
+//     // espacios iniciales
+//     for (let s = 1; s <= n - i; s++) {
+//         process.stdout.write(" ");
+//     }
 
-// const altura = Number(prompt("Introduzca altura: "));
-
-// for (let i = 1; i <= altura; i++) {
-//     for (let j = 1; j <= i; j++) {
-//         if (j === 1 || j === i || i === altura) {
-//             process.stdout.write("*");
+//     // asteriscos y huecos
+//     for (let j = 1; j <= 2 * i - 1; j++) {
+//         if (j === 1 || j === 2 * i - 1 || i === n) {
+//             process.stdout.write("*"); // bordes y base
 //         } else {
-//             process.stdout.write(" ");
+//             process.stdout.write(" "); // hueco interior
 //         }
 //     }
+
+//     // salto de línea
 //     process.stdout.write("\n");
 // }
-
-// INTENTAR:
-
-//             ********
-//             ********
-//             ********
-//         ********
-//         ********
-//         ********
-//     ********
-//     ********
-//     ********
-// ********
-// ********
-// ********
-
-// altura escalon fija: 3, anchura: 8 (solo se permiten pares), numero de pisos: 4
-
-// INTENTAR:
-// *   *
-// *****
-// *   *
-// *****
-// *   *
-// *****
-// *   *
