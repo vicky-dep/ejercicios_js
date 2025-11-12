@@ -13,7 +13,7 @@
 // ********
 // ********
 // ********
-
+/*
 const alturaPiso = 3;
 const anchura = 8;
 const pisos = 4;
@@ -37,6 +37,44 @@ for (let piso = pisos; piso >= 1; piso--) {
         process.stdout.write("\n");
     }
 }
+*/
+// Solucion del profe:
+const prompt = require('prompt-sync')();
+
+const ancho = Number(prompt("Introduzca ancho (solo par): "));
+
+const pisos = Number(prompt("Introduzca numero de pisos: "));
+
+let validacion = true;
+
+if (Number.isNaN(ancho) || ancho % 2 == 1) {
+    // si no es numero o es impar
+    validacion = false;
+}
+
+if (Number.isNaN(pisos)) {
+    // si no es numero
+    validacion = false;
+}
+
+if (validacion) {
+    pintarEscalera(ancho, pisos);
+}
+
+// HOIST (como si lo primero que leyera js serian las funciones)
+function pintarEscalera(ancho, pisos) {
+
+    for (let i = 0; i < pisos; i++) {
+        // i es indice de piso
+        for(let j = 0; j < 3; j++) {
+            // j es indice de altura de escalon
+            process.stdout.write(' '.repeat((ancho/2)*(pisos-1-i)));
+            process.stdout.write('*'.repeat(ancho));
+            process.stdout.write('\n');
+        }
+
+    }
+}
 
 // INTENTAR:
 // *   *
@@ -46,7 +84,7 @@ for (let piso = pisos; piso >= 1; piso--) {
 // *   *
 // *****
 // *   *
-
+/*
 const prompt = require("prompt-sync")();
 
 const filas = Number(prompt("¿Cuántas filas quieres? "));
@@ -68,3 +106,4 @@ for (let i = 1; i <= filas; i++) {
     }
     process.stdout.write("\n");
 }
+*/

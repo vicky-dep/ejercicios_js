@@ -56,3 +56,31 @@ if (isNaN(numPersonas) || numPersonas <= 0) {
     console.log(`Máximo de hijos: ${maxHijos}`);
     console.log(`Mínimo de hijos: ${minHijos}`);
 }
+
+/* solucion de clase: --- PROBAR !
+const prompt = require('prompt-sync')();
+
+const n = Number(prompt('Introduce los trabajadores de la empresa: '));
+
+let hijos = 0;
+let contador = 0;
+let max = 0;
+let min = Infinity;
+let sumaHijos = 0;
+
+for (let i = 1; i <= n; i++) {
+    hijos = Number(prompt("Cuantos hijos tiene: "));
+    contador++;
+    sumaHijos += hijos;
+
+    if (hijos > max) {
+        max = hijos;    
+    }
+    if (hijos < min) {
+        min = hijos;    
+    }
+}
+media = sumaHijos / contador;
+console.log("Empleados: " + n + " hijos total: " + sumaHijos + " promedio hijos: " + )
+
+*/
