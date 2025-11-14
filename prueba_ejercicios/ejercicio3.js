@@ -14,6 +14,7 @@
 // 1: el numeroUsuario es mayor que el numeroCorrecto  
 // -1: el numeroUsuario es menor que el numeroCorrecto.
 
+/*
 const prompt = require('prompt-sync')();
 
 const numeroCorrecto = 28;
@@ -60,3 +61,57 @@ do {
         console.log("El número secreto es mayor.");
     }
 } while (!acierto);
+*/
+
+// ***** SOLUCION CLASE *****
+
+const prompt = require('prompt-sync')();
+
+// ALGUNOS PRINCIPIOS
+// KISS: Keep It Simple Stupid
+// Depends on abstraction
+// DRY: Don't repeat yourself
+// Single responsability principle - Responsabilidad de solo una cosa (las funciones deberian hacer solo una cosa)
+
+// console.log(`num = ${num}`);
+
+// LOOP GAME
+
+let jugar = true;
+let numAAdivinar = 3;
+let num;
+
+while (jugar) {
+    
+    num = entradaNumeroValidada();
+
+    if (num === numAAdivinar) {
+        jugar = false;
+        console.log('Ganas!!');
+    } else if (num > numAAdivinar) {
+        console.log('Numero a adivinar es menor');
+    } else {
+        console.log('Numero a adivinar es mayor');
+    }
+
+}
+
+function leerNumero (mensajePrompt) {
+    
+    return Number(prompt(mensajePrompt === undefined ? 'Introduzca número:' : mensajePrompt));
+    
+}
+
+// Entrada validada
+
+function entradaNumeroValidada() {
+
+    let num = leerNumero(); // se puede permitir no llevar nada porque tiene un operador ternario
+    
+    while (num < 1 || num > 100) {
+        num = leerNumero();
+    }
+    
+    return num;
+    
+}
