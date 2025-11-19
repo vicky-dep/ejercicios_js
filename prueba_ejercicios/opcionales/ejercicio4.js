@@ -25,11 +25,11 @@ let suma = 0;
 let contador = 1;
 
 while (contador <= 3) {
-    let votos = leerVotosCandidatoConValidacion('Candidato' + contador);
+    let votos = leerVotosCandidatoConValidacion('Candidato ' + contador);
     suma += votos;
 
     if (votos > max) {
-        alcalde = 'Candidato'+contador;
+        alcalde = 'Candidato '+contador;
         max = votos;
     }
 
@@ -48,15 +48,12 @@ while (contador <= 3) {
 }
 
 console.log(`
-Votos totales: ${suma}. 
-Votos candidato1:
-${votos1} votos 
-porcentaje ${votos1*100/suma}
-Votos candidato2:
-${votos2} votos 
-porcentaje ${votos2*100/suma}
-Votos candidato3:
-${votos3} votos
-porcentaje ${votos3*100/suma}
-El ganador es:
+Votos totales: ${suma} votos
+Votos candidato 1: ${votos1} votos 
+Porcentaje candidato 1: ${(votos1*100/suma).toFixed(2)}%
+Votos candidato 2: ${votos2} votos 
+Porcentaje candidato 2: ${(votos2*100/suma).toFixed(2)}%
+Votos candidato 3: ${votos3} votos
+Porcentaje candidato 3: ${(votos3*100/suma).toFixed(2)}%
+El ganador es: ${alcalde}
 `);
