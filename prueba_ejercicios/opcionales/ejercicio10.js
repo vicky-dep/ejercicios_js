@@ -2,7 +2,7 @@
 // (licenciado, técnico y obrero), del turno (primero, segundo y tercero) y las horas trabajadas.
 // Donde los del primer turno ganan 200€ adicionales a su salario, los del segundo 100€ y los del tercero 300€; 
 // El obrero gana 30€ por hora, el técnico 50€ y el licenciado 100€.
-
+/*
 const prompt = require('prompt-sync')();
 
 // función que calcula el salario según el puesto y las horas trabajadas
@@ -55,3 +55,93 @@ while (contador <= n) {
 }
 
 console.log(`El gasto total de la empresa en salarios la semana pasada fue: ${totalEmpresa} €`);
+*/
+// ---- VERSION EN CLASE ----
+
+const prompt = require('prompt-sync')();
+
+function leerPuesto(mensaje) {
+    let puesto;
+    do {
+        puesto = prompt(mensaje);
+        if (puesto != 'licenciado' && puesto != 'tecnico' && puesto != 'obrero') {
+            console.log('Entrada incorrecta. Introduzca puesto: licenciado, tecnico y obrero.');
+        }
+    } while (puesto != 'licenciado' && puesto != 'tecnico' && puesto != 'obrero');
+    
+    return puesto;
+}
+
+function leerTurno(mensaje) {
+    let turno;
+    do {
+        turno = prompt(mensaje);
+        if (turno != 'primero' && turno != 'segundo' && turno != 'tercero') {
+            console.log('Entrada incorrecta. Introduzca turno: primero, segundo y tercero.');
+        }
+    } while (turno != 'primero' && turno != 'segundo' && turno != 'tercero');
+    
+    return turno;
+}
+
+function leerNumValido(mensaje) {
+    let num;
+
+    do {
+        num = Number(prompt(mensaje));
+        if (Number.isNaN(num)) {
+            console.log('Error formato no numérico. Vuelve a introducir número.');
+        }
+    } while (Number.isNaN(num));
+
+    return num;
+}
+
+let numTrabajadores = leerNumValido('Introduzca número de trabajadores: ');
+
+let contador = 0;
+let suma = 0;
+let max = -Infinity;
+let min = Infinity;
+let media;
+
+while (contador < numTrabajadores) {
+    let puesto = leerPuesto('Introduzca puesto (licenciado, tecnico y obrero): ')
+    let turno = leerTurno('Introduzca turno (primero, segundo y tercero): ');
+    let horas = leerNumValido('Introduzca horas trabajadas: ');
+
+    let sueldoBase;
+    if (puesto == 'obrero') {
+        sueldoBase = horas * 30;
+    } else if (puesto == 'tecnico') {
+        sueldoBase = horas * 50;
+    } else {
+        // if (puesto == 'licenciado')
+        sueldoBase = horas * 100;
+    }
+
+    if (turno == 'primero') {
+        sueldoBase += 200;
+    } else if (turno == 'segundo') {
+        sueldoBase += 100;
+    } else {
+        sueldoBase += 300;
+    }
+
+    if (sueldoBase < min) {
+        min = sueldoBase;
+    }
+    if (sueldoBase > max) {
+        max = sueldoBase;
+    }
+
+    contador++;
+    suma += sueldoBase;
+
+    console.log(`Trabajador ${contador} cobra ${sueldoBase}`);
+    
+}
+
+console.log(`El sueldo maximo es: ${max}`);
+console.log(`El sueldo minimo es: ${min}`);
+console.log(`La media es: ${suma/numTrabajadores}`);
