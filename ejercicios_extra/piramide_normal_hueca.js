@@ -1,3 +1,30 @@
+const prompt = require("prompt-sync")();
+
+const altura = Number(prompt("Introduce la altura de la pirámide hueca: "));
+
+// Validación opcional
+if (altura <= 0 || Number.isNaN(altura)) {
+    console.log("La altura debe ser un número positivo.");
+} else {
+
+    // Primera línea (la punta)
+    console.log(" ".repeat(altura - 1) + "*");
+
+    // Línea centrales (desde i = 1 hasta i = altura-2)
+    for (let i = 1; i < altura - 1; i++) {
+        const espaciosIzq = " ".repeat(altura - 1 - i);
+        const espaciosCentro = " ".repeat(2 * i - 1);
+        console.log(espaciosIzq + "*" + espaciosCentro + "*");
+    }
+
+    // Última línea (base llena)
+    if (altura > 1) {
+        console.log("*".repeat(2 * altura - 1));
+    }
+}
+
+/* OTRA FORMA: 
+
 const prompt = require('prompt-sync')();
 
 const altura = Number(prompt("Introduzca altura: "));
@@ -24,6 +51,7 @@ while(contador < altura) {
 
     contador++;
 }
+*/
 
 // otra forma:
 // Pirámide hueca simétrica con process.stdout.write()
