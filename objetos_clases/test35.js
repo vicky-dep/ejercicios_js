@@ -24,3 +24,5 @@ const array = [1, 2, 3, 'josé'];
 for (const value of array) {
     console.log(value);
 }
+
+// listar las claves 

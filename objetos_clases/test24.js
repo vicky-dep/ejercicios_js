@@ -11,7 +11,7 @@
 // D) Se borra la propiedad modo
 
 const config = { modo: "dev" };
-Object.freeze(config);
-config.modo = "prod";
+Object.freeze(config); // si congelo un objeto, podre cambiarlo? 
+config.modo = "prod"; // no se puede alterar
 
 console.log(config);

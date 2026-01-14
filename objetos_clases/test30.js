@@ -20,7 +20,7 @@
 const persona1 = {
     nombre: "Ana",
     saludar() {
-        console.log("Hola, soy " + this.nombre);
+        console.log("Hola, soy " + this.nombre); // this es el propio obj -> Ana
     }
 };
 
@@ -28,8 +28,8 @@ const persona1 = {
 this.nombre = 'Pepe';
 const persona2 = {
     nombre: "Ana",
-    saludar: () => {
-        console.log("Hola, soy " + this.nombre);
+    saludar: () => { // funcion anonima que creas sobre la marcha pero que se va a llamar saludar (arrow function)
+        console.log("Hola, soy " + this.nombre); // este this es el this de fuera
     }
 };
 

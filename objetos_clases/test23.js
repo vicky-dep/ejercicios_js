@@ -43,3 +43,5 @@ let obj2 = JSON.stringify(obj);
 console.log(obj2);
 
 // las API son mecanismos de comunicacion entre cliente y servidor, intercambiando estos JSON (no se transmiten funciones ni datos del prototipo)
+
+// no se serializan las funciones y tampoco los prototipos

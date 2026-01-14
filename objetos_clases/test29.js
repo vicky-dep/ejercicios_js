@@ -10,3 +10,5 @@
 
 const proto = { saludar() { console.log("hola"); } };
 const obj = Object.create(proto);
+
+console.log(obj.__proto__.saludar.toString());

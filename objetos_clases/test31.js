@@ -16,5 +16,5 @@ function saludar() {
     console.log("Hola " + this.nombre);
 }
 const persona = { nombre: "Ana" };
-const saludarPersona = saludar.bind(persona);
+const saludarPersona = saludar.bind(persona); // a esa persona le bindeo...
 saludarPersona();

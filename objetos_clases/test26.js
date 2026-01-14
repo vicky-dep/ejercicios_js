@@ -8,5 +8,11 @@
 
 const persona = { nombre: "Ana", edad: 30 };
 console.log(persona);
-delete persona.edad;
+delete persona.edad; // borras el atributo edad
 console.log(persona);
+
+// JS dinamicamente permite agregar atributos
+persona.nif = '74889632X'; // puedo añadir atributos con .nombre
+console.log(persona);
+
+// en JAVA tienes que utilizar API Reflection (si utilizas esta libreria puedes modificar TODO)

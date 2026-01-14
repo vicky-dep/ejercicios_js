@@ -6,8 +6,17 @@
 const persona = { 
     name: 'josé',
     get nombre() { 
-        return this.name.toUpperCase(); 
+        return this.name.toUpperCase(); // con get solo puedes leer (readonly)
+    },
+    set nombreEnMinusculas(nombre) {
+        this.name = nombre.toLowerCase(); // con set si puedes escribir
     }
 };
 
+console.log(persona.name);
 console.log(persona.nombre);
+persona.nombreEnMinusculas = 'JOSE MANUEL';
+console.log(persona.name);
+
+
+// la gracia del getter es que puedes transformar ese codigo

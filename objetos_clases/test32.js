@@ -15,10 +15,10 @@ class Persona {
     }
 }
 
-class Empleado extends Persona {
-    constructor(nombre, salario) {
-        super(nombre);
-        this.salario = salario;
+class Empleado extends Persona { // empleado hereda de persona
+    constructor(nombre, salario) { // constructor con 2 elementos
+        super(nombre); // invocas al constructor de la super clase
+        this.salario = salario; // argumento especifico aqui 
     }
 }
 

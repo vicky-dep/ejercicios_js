@@ -15,3 +15,5 @@ const obj = {
 console.log(obj);
 console.log(obj[miSymbolSinDesc]);
 console.log(obj[id]);
+
+// los simbolos son como constantes unicas
